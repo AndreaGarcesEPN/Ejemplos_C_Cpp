@@ -1,17 +1,18 @@
-# Project: Prj Sentencias de control
+# Project: PrjRecursividad
 # Makefile created by Dev-C++ 5.11
 
-CPP      = g++.exe -D__DEBUG__
-CC       = gcc.exe -D__DEBUG__
+CPP      = g++.exe
+CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = EjemploSentenciasControl.o
-LINKOBJ  = EjemploSentenciasControl.o
-LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+RES      = PrjRecursividad_private.res
+OBJ      = EjemploRecursividad.o $(RES)
+LINKOBJ  = EjemploRecursividad.o $(RES)
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
-BIN      = "Prj Sentencias de control.exe"
-CXXFLAGS = $(CXXINCS) -g3
-CFLAGS   = $(INCS) -g3
+BIN      = PrjRecursividad.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
 RM       = rm.exe -f
 
 .PHONY: all all-before all-after clean clean-custom
@@ -24,5 +25,9 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-EjemploSentenciasControl.o: EjemploSentenciasControl.cpp
-	$(CPP) -c EjemploSentenciasControl.cpp -o EjemploSentenciasControl.o $(CXXFLAGS)
+EjemploRecursividad.o: EjemploRecursividad.cpp
+	$(CPP) -c EjemploRecursividad.cpp -o EjemploRecursividad.o $(CXXFLAGS)
+
+PrjRecursividad_private.res: PrjRecursividad_private.rc 
+	$(WINDRES) -i PrjRecursividad_private.rc --input-format=rc -o PrjRecursividad_private.res -O coff 
+
