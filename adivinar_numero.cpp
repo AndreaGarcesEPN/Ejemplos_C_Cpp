@@ -3,7 +3,7 @@
 // errores por favor reportelos en el foro (http://pseint.sourceforge.net).
 
 #include<iostream>
-//#include<cstdlib>
+#include<cstdlib>
 using namespace std;
 
 // Para leer variables de texto se utiliza el operador << del objeto cin, que

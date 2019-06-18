@@ -21,7 +21,7 @@ void Start() {
 	cout << "2 : Medium (0-30)\n";
 	cout << "3 : Difficult (0-50)\n";
 	cout << "or type another key to quit\n";
-	c = 30;
+	c = 0;
 
 	cin >> c;                   // read the user's choice
 	cout << "\n";
