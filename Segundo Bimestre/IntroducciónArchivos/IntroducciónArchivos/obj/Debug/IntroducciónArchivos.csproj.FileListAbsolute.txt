@@ -1,0 +1,6 @@
+C:\Temp\Ejemplos_C_Cpp\Segundo Bimestre\IntroducciónArchivos\IntroducciónArchivos\bin\Debug\IntroducciónArchivos.exe.config
+C:\Temp\Ejemplos_C_Cpp\Segundo Bimestre\IntroducciónArchivos\IntroducciónArchivos\bin\Debug\IntroducciónArchivos.exe
+C:\Temp\Ejemplos_C_Cpp\Segundo Bimestre\IntroducciónArchivos\IntroducciónArchivos\bin\Debug\IntroducciónArchivos.pdb
+C:\Temp\Ejemplos_C_Cpp\Segundo Bimestre\IntroducciónArchivos\IntroducciónArchivos\obj\Debug\IntroducciónArchivos.csprojResolveAssemblyReference.cache
+C:\Temp\Ejemplos_C_Cpp\Segundo Bimestre\IntroducciónArchivos\IntroducciónArchivos\obj\Debug\IntroducciónArchivos.exe
+C:\Temp\Ejemplos_C_Cpp\Segundo Bimestre\IntroducciónArchivos\IntroducciónArchivos\obj\Debug\IntroducciónArchivos.pdb
