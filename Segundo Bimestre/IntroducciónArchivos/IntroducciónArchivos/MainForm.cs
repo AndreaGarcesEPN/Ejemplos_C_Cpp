@@ -37,13 +37,7 @@ namespace IntroducciónArchivos
 			string log = "Prueba de log";
 			string tipo = "info";
 			
-			int posicionNuevoLog = dgvLogs.Rows.Add();
-			
-			
-			
-			dgvLogs.Rows[posicionNuevoLog].Cells[0].Value = tipo;
-			dgvLogs.Rows[posicionNuevoLog].Cells[1].Value = log; 
-			
+			EscribirLog(tipo, log, dgvLogs);
 			
 			//Def cadena de texto
 			//Llamar DataGriedView
