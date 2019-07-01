@@ -14,7 +14,12 @@ namespace IntroducciónArchivos
 		/// Designer variable used to keep track of non-visual components.
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
-		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.DataGridView dgvLogs;
+		private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
+		private System.Windows.Forms.DataGridViewTextBoxColumn log;
+		private System.Windows.Forms.Button btnAnadirLog;
+		private System.Windows.Forms.Button btnDirectorio;
+		private System.Windows.Forms.TextBox txbLeerDirectorio;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -37,27 +42,81 @@ namespace IntroducciónArchivos
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.dgvLogs = new System.Windows.Forms.DataGridView();
+			this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.log = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.btnAnadirLog = new System.Windows.Forms.Button();
+			this.btnDirectorio = new System.Windows.Forms.Button();
+			this.txbLeerDirectorio = new System.Windows.Forms.TextBox();
+			((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// comboBox1
+			// dgvLogs
 			// 
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(13, 13);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(259, 21);
-			this.comboBox1.TabIndex = 0;
+			this.dgvLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvLogs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.tipo,
+			this.log});
+			this.dgvLogs.Location = new System.Drawing.Point(12, 67);
+			this.dgvLogs.Name = "dgvLogs";
+			this.dgvLogs.Size = new System.Drawing.Size(373, 174);
+			this.dgvLogs.TabIndex = 0;
+			this.dgvLogs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLogsCellDoubleClick);
+			// 
+			// tipo
+			// 
+			this.tipo.HeaderText = "Tipo Log";
+			this.tipo.Name = "tipo";
+			this.tipo.ReadOnly = true;
+			// 
+			// log
+			// 
+			this.log.HeaderText = "Descripción";
+			this.log.Name = "log";
+			this.log.ReadOnly = true;
+			// 
+			// btnAnadirLog
+			// 
+			this.btnAnadirLog.Location = new System.Drawing.Point(309, 38);
+			this.btnAnadirLog.Name = "btnAnadirLog";
+			this.btnAnadirLog.Size = new System.Drawing.Size(75, 23);
+			this.btnAnadirLog.TabIndex = 1;
+			this.btnAnadirLog.Text = "Añadir Log";
+			this.btnAnadirLog.UseVisualStyleBackColor = true;
+			this.btnAnadirLog.Click += new System.EventHandler(this.BtnAnadirLogClick);
+			// 
+			// btnDirectorio
+			// 
+			this.btnDirectorio.Location = new System.Drawing.Point(12, 38);
+			this.btnDirectorio.Name = "btnDirectorio";
+			this.btnDirectorio.Size = new System.Drawing.Size(100, 23);
+			this.btnDirectorio.TabIndex = 2;
+			this.btnDirectorio.Text = "Leer Directorio";
+			this.btnDirectorio.UseVisualStyleBackColor = true;
+			this.btnDirectorio.Click += new System.EventHandler(this.BtnDirectorioClick);
+			// 
+			// txbLeerDirectorio
+			// 
+			this.txbLeerDirectorio.Location = new System.Drawing.Point(12, 12);
+			this.txbLeerDirectorio.Name = "txbLeerDirectorio";
+			this.txbLeerDirectorio.Size = new System.Drawing.Size(100, 20);
+			this.txbLeerDirectorio.TabIndex = 3;
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.RoyalBlue;
-			this.ClientSize = new System.Drawing.Size(284, 262);
-			this.Controls.Add(this.comboBox1);
+			this.ClientSize = new System.Drawing.Size(397, 253);
+			this.Controls.Add(this.txbLeerDirectorio);
+			this.Controls.Add(this.btnDirectorio);
+			this.Controls.Add(this.btnAnadirLog);
+			this.Controls.Add(this.dgvLogs);
 			this.Name = "MainForm";
 			this.Text = "IntroducciónArchivos";
+			((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 	}
