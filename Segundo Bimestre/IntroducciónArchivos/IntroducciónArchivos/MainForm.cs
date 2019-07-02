@@ -141,6 +141,39 @@ namespace IntroducciónArchivos
 				EscribirLog("error", error.ToString(), dgvLogs);
 			}
 		}
+		void BtnCrearArchivoClick(object sender, EventArgs e)
+		{
+			//Se está fuera del código utilizado
+			try
+			{
+				string path = txbCrearArchivo.Text;
+				StreamWriter escritura = File.CreateText(@path);
+				escritura.WriteLine("Hola archivo");
+				escritura.WriteLine("Segunda linea");
+				escritura.WriteLine("Tercera linea");
+				
+				escritura.Close();
+				
+				EscribirLog("info", "Escritura Archivo: Se escribió el archivo", dgvLogs);
+			}
+			catch(Exception error)
+			{
+				EscribirLog("error", error.ToString(), dgvLogs);
+			}
+		}
+		void BtnCrearDirectorioClick(object sender, EventArgs e)
+		{
+			try
+			{
+				string path = txbCrearDirectorio.Text;
+				Directory.CreateDirectory(@path);
+				EscribirLog("info", "Crear Directorio: Se creó el directorio " + path, dgvLogs);
+			}
+			catch(Exception error)
+			{
+				EscribirLog("error", error.ToString(), dgvLogs);
+			}
+		}
 		
 	}
 }

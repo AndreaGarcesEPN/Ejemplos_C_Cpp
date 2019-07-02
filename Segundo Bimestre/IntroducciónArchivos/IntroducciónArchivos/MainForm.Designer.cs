@@ -22,6 +22,10 @@ namespace IntroducciónArchivos
 		private System.Windows.Forms.TextBox txbLeerDirectorio;
 		private System.Windows.Forms.TextBox txbListarDirectorio;
 		private System.Windows.Forms.Button btnListarDirectorio;
+		private System.Windows.Forms.TextBox txbCrearArchivo;
+		private System.Windows.Forms.Button btnCrearArchivo;
+		private System.Windows.Forms.TextBox txbCrearDirectorio;
+		private System.Windows.Forms.Button btnCrearDirectorio;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -52,6 +56,10 @@ namespace IntroducciónArchivos
 			this.txbLeerDirectorio = new System.Windows.Forms.TextBox();
 			this.txbListarDirectorio = new System.Windows.Forms.TextBox();
 			this.btnListarDirectorio = new System.Windows.Forms.Button();
+			this.txbCrearArchivo = new System.Windows.Forms.TextBox();
+			this.btnCrearArchivo = new System.Windows.Forms.Button();
+			this.txbCrearDirectorio = new System.Windows.Forms.TextBox();
+			this.btnCrearDirectorio = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -68,7 +76,7 @@ namespace IntroducciónArchivos
 			this.dgvLogs.GridColor = System.Drawing.SystemColors.AppWorkspace;
 			this.dgvLogs.Location = new System.Drawing.Point(12, 67);
 			this.dgvLogs.Name = "dgvLogs";
-			this.dgvLogs.Size = new System.Drawing.Size(373, 174);
+			this.dgvLogs.Size = new System.Drawing.Size(522, 167);
 			this.dgvLogs.TabIndex = 0;
 			this.dgvLogs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLogsCellDoubleClick);
 			// 
@@ -87,7 +95,7 @@ namespace IntroducciónArchivos
 			// btnAnadirLog
 			// 
 			this.btnAnadirLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnAnadirLog.Location = new System.Drawing.Point(309, 38);
+			this.btnAnadirLog.Location = new System.Drawing.Point(458, 38);
 			this.btnAnadirLog.Name = "btnAnadirLog";
 			this.btnAnadirLog.Size = new System.Drawing.Size(75, 23);
 			this.btnAnadirLog.TabIndex = 1;
@@ -114,14 +122,14 @@ namespace IntroducciónArchivos
 			// 
 			// txbListarDirectorio
 			// 
-			this.txbListarDirectorio.Location = new System.Drawing.Point(135, 12);
+			this.txbListarDirectorio.Location = new System.Drawing.Point(118, 12);
 			this.txbListarDirectorio.Name = "txbListarDirectorio";
 			this.txbListarDirectorio.Size = new System.Drawing.Size(100, 20);
 			this.txbListarDirectorio.TabIndex = 4;
 			// 
 			// btnListarDirectorio
 			// 
-			this.btnListarDirectorio.Location = new System.Drawing.Point(135, 38);
+			this.btnListarDirectorio.Location = new System.Drawing.Point(118, 38);
 			this.btnListarDirectorio.Name = "btnListarDirectorio";
 			this.btnListarDirectorio.Size = new System.Drawing.Size(100, 23);
 			this.btnListarDirectorio.TabIndex = 5;
@@ -129,12 +137,50 @@ namespace IntroducciónArchivos
 			this.btnListarDirectorio.UseVisualStyleBackColor = true;
 			this.btnListarDirectorio.Click += new System.EventHandler(this.BtnListarDirectorioClick);
 			// 
+			// txbCrearArchivo
+			// 
+			this.txbCrearArchivo.Location = new System.Drawing.Point(224, 12);
+			this.txbCrearArchivo.Name = "txbCrearArchivo";
+			this.txbCrearArchivo.Size = new System.Drawing.Size(100, 20);
+			this.txbCrearArchivo.TabIndex = 6;
+			// 
+			// btnCrearArchivo
+			// 
+			this.btnCrearArchivo.Location = new System.Drawing.Point(224, 38);
+			this.btnCrearArchivo.Name = "btnCrearArchivo";
+			this.btnCrearArchivo.Size = new System.Drawing.Size(100, 23);
+			this.btnCrearArchivo.TabIndex = 7;
+			this.btnCrearArchivo.Text = "Crear Archivo";
+			this.btnCrearArchivo.UseVisualStyleBackColor = true;
+			this.btnCrearArchivo.Click += new System.EventHandler(this.BtnCrearArchivoClick);
+			// 
+			// txbCrearDirectorio
+			// 
+			this.txbCrearDirectorio.Location = new System.Drawing.Point(330, 12);
+			this.txbCrearDirectorio.Name = "txbCrearDirectorio";
+			this.txbCrearDirectorio.Size = new System.Drawing.Size(100, 20);
+			this.txbCrearDirectorio.TabIndex = 8;
+			// 
+			// btnCrearDirectorio
+			// 
+			this.btnCrearDirectorio.Location = new System.Drawing.Point(330, 38);
+			this.btnCrearDirectorio.Name = "btnCrearDirectorio";
+			this.btnCrearDirectorio.Size = new System.Drawing.Size(100, 23);
+			this.btnCrearDirectorio.TabIndex = 9;
+			this.btnCrearDirectorio.Text = "Crear Directorio";
+			this.btnCrearDirectorio.UseVisualStyleBackColor = true;
+			this.btnCrearDirectorio.Click += new System.EventHandler(this.BtnCrearDirectorioClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.RoyalBlue;
-			this.ClientSize = new System.Drawing.Size(397, 253);
+			this.ClientSize = new System.Drawing.Size(546, 246);
+			this.Controls.Add(this.btnCrearDirectorio);
+			this.Controls.Add(this.txbCrearDirectorio);
+			this.Controls.Add(this.btnCrearArchivo);
+			this.Controls.Add(this.txbCrearArchivo);
 			this.Controls.Add(this.btnListarDirectorio);
 			this.Controls.Add(this.txbListarDirectorio);
 			this.Controls.Add(this.txbLeerDirectorio);
