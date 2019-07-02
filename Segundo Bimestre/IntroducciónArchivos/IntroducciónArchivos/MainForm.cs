@@ -57,6 +57,16 @@ namespace IntroducciónArchivos
 			MessageBoxIcon icono = MessageBoxIcon.Information;
 			MessageBoxButtons botones = MessageBoxButtons.OK;
 			
+			if(tipo == "error")
+			{
+				icono = MessageBoxIcon.Error;
+			}
+			else
+			{
+				icono = MessageBoxIcon.Information;
+			}
+			
+			
 			MessageBox.Show(log, tipo, botones, icono);
 			}
 		}
@@ -74,10 +84,21 @@ namespace IntroducciónArchivos
 				string directorioPadre = infoDirectorio.Parent.ToString();
 				string directorioRaiz = infoDirectorio.Root.ToString();
 				
-				EscribirLog("info", fechaCreacion, dgvLogs);
-				EscribirLog("info", nombreCompleto, dgvLogs);
-				EscribirLog("info", directorioPadre, dgvLogs);
-				EscribirLog("info", directorioRaiz, dgvLogs);
+				EscribirLog("info", "Leyendo directorio: " + fechaCreacion, dgvLogs);
+				EscribirLog("info", "Leyendo directorio: " + nombreCompleto, dgvLogs);
+				EscribirLog("info", "Leyendo directorio: " + directorioPadre, dgvLogs);
+				EscribirLog("info", "Leyendo directorio: " + directorioRaiz, dgvLogs);
+				
+				FileInfo[] archivosDeDirectorio = infoDirectorio.GetFiles();
+				
+				foreach (FileInfo archivo in archivosDeDirectorio) 
+				{
+					EscribirLog("info", "Archivo: " + archivo.CreationTime, dgvLogs);
+					EscribirLog("info", "Archivo: " + archivo.FullName, dgvLogs);
+					EscribirLog("info", "Archivo: " + archivo.Extension, dgvLogs);
+					EscribirLog("info", "Archivo: " + archivo.LastAccessTime, dgvLogs);
+					EscribirLog("info", "Archivo: " + archivo.IsReadOnly, dgvLogs);
+				}
 				
 			}
 			catch(Exception error)
@@ -91,6 +112,34 @@ namespace IntroducciónArchivos
 			int posicionNuevoLog = dgv.Rows.Add();
 			dgv.Rows[posicionNuevoLog].Cells[0].Value = tipo;
 			dgv.Rows[posicionNuevoLog].Cells[1].Value = log; 
+			
+			if(tipo == "error")
+			{
+				dgv.Rows[posicionNuevoLog].Cells[0].Style.BackColor = Color.Red;	
+			}
+			else
+			{
+				dgv.Rows[posicionNuevoLog].Cells[0].Style.BackColor = Color.Aquamarine;
+			}
+		}
+		void BtnListarDirectorioClick(object sender, EventArgs e)
+		{
+			try
+			{
+				string path = txbListarDirectorio.Text;
+				string[] arregloDirectorios = Directory.GetDirectories(@path);
+				int numeroDirectorios = arregloDirectorios.Length;
+				EscribirLog("info", "Número de Directorios " + numeroDirectorios.ToString(), dgvLogs);
+				
+				foreach (string directorio in arregloDirectorios) 
+				{
+					EscribirLog("info", "Directorio: " + directorio, dgvLogs);
+				}
+			}
+			catch(Exception error)
+			{
+				EscribirLog("error", error.ToString(), dgvLogs);
+			}
 		}
 		
 	}

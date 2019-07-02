@@ -20,6 +20,8 @@ namespace IntroducciónArchivos
 		private System.Windows.Forms.Button btnAnadirLog;
 		private System.Windows.Forms.Button btnDirectorio;
 		private System.Windows.Forms.TextBox txbLeerDirectorio;
+		private System.Windows.Forms.TextBox txbListarDirectorio;
+		private System.Windows.Forms.Button btnListarDirectorio;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -48,15 +50,22 @@ namespace IntroducciónArchivos
 			this.btnAnadirLog = new System.Windows.Forms.Button();
 			this.btnDirectorio = new System.Windows.Forms.Button();
 			this.txbLeerDirectorio = new System.Windows.Forms.TextBox();
+			this.txbListarDirectorio = new System.Windows.Forms.TextBox();
+			this.btnListarDirectorio = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dgvLogs
 			// 
+			this.dgvLogs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
+			this.dgvLogs.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
 			this.dgvLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvLogs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
 			this.tipo,
 			this.log});
+			this.dgvLogs.GridColor = System.Drawing.SystemColors.AppWorkspace;
 			this.dgvLogs.Location = new System.Drawing.Point(12, 67);
 			this.dgvLogs.Name = "dgvLogs";
 			this.dgvLogs.Size = new System.Drawing.Size(373, 174);
@@ -77,6 +86,7 @@ namespace IntroducciónArchivos
 			// 
 			// btnAnadirLog
 			// 
+			this.btnAnadirLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnAnadirLog.Location = new System.Drawing.Point(309, 38);
 			this.btnAnadirLog.Name = "btnAnadirLog";
 			this.btnAnadirLog.Size = new System.Drawing.Size(75, 23);
@@ -102,12 +112,31 @@ namespace IntroducciónArchivos
 			this.txbLeerDirectorio.Size = new System.Drawing.Size(100, 20);
 			this.txbLeerDirectorio.TabIndex = 3;
 			// 
+			// txbListarDirectorio
+			// 
+			this.txbListarDirectorio.Location = new System.Drawing.Point(135, 12);
+			this.txbListarDirectorio.Name = "txbListarDirectorio";
+			this.txbListarDirectorio.Size = new System.Drawing.Size(100, 20);
+			this.txbListarDirectorio.TabIndex = 4;
+			// 
+			// btnListarDirectorio
+			// 
+			this.btnListarDirectorio.Location = new System.Drawing.Point(135, 38);
+			this.btnListarDirectorio.Name = "btnListarDirectorio";
+			this.btnListarDirectorio.Size = new System.Drawing.Size(100, 23);
+			this.btnListarDirectorio.TabIndex = 5;
+			this.btnListarDirectorio.Text = "Listar Directorio";
+			this.btnListarDirectorio.UseVisualStyleBackColor = true;
+			this.btnListarDirectorio.Click += new System.EventHandler(this.BtnListarDirectorioClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.RoyalBlue;
 			this.ClientSize = new System.Drawing.Size(397, 253);
+			this.Controls.Add(this.btnListarDirectorio);
+			this.Controls.Add(this.txbListarDirectorio);
 			this.Controls.Add(this.txbLeerDirectorio);
 			this.Controls.Add(this.btnDirectorio);
 			this.Controls.Add(this.btnAnadirLog);
