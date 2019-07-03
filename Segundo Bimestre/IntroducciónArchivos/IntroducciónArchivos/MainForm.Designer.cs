@@ -26,6 +26,11 @@ namespace IntroducciónArchivos
 		private System.Windows.Forms.Button btnCrearArchivo;
 		private System.Windows.Forms.TextBox txbCrearDirectorio;
 		private System.Windows.Forms.Button btnCrearDirectorio;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.TextBox txbNombre;
+		private System.Windows.Forms.TextBox txbDestino;
+		private System.Windows.Forms.Button btnCopiarDirectorio;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -60,6 +65,11 @@ namespace IntroducciónArchivos
 			this.btnCrearArchivo = new System.Windows.Forms.Button();
 			this.txbCrearDirectorio = new System.Windows.Forms.TextBox();
 			this.btnCrearDirectorio = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.txbNombre = new System.Windows.Forms.TextBox();
+			this.txbDestino = new System.Windows.Forms.TextBox();
+			this.btnCopiarDirectorio = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -76,7 +86,7 @@ namespace IntroducciónArchivos
 			this.dgvLogs.GridColor = System.Drawing.SystemColors.AppWorkspace;
 			this.dgvLogs.Location = new System.Drawing.Point(12, 67);
 			this.dgvLogs.Name = "dgvLogs";
-			this.dgvLogs.Size = new System.Drawing.Size(522, 167);
+			this.dgvLogs.Size = new System.Drawing.Size(769, 204);
 			this.dgvLogs.TabIndex = 0;
 			this.dgvLogs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLogsCellDoubleClick);
 			// 
@@ -95,7 +105,7 @@ namespace IntroducciónArchivos
 			// btnAnadirLog
 			// 
 			this.btnAnadirLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnAnadirLog.Location = new System.Drawing.Point(458, 38);
+			this.btnAnadirLog.Location = new System.Drawing.Point(705, 38);
 			this.btnAnadirLog.Name = "btnAnadirLog";
 			this.btnAnadirLog.Size = new System.Drawing.Size(75, 23);
 			this.btnAnadirLog.TabIndex = 1;
@@ -171,12 +181,57 @@ namespace IntroducciónArchivos
 			this.btnCrearDirectorio.UseVisualStyleBackColor = true;
 			this.btnCrearDirectorio.Click += new System.EventHandler(this.BtnCrearDirectorioClick);
 			// 
+			// label1
+			// 
+			this.label1.Location = new System.Drawing.Point(437, 15);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(100, 23);
+			this.label1.TabIndex = 10;
+			this.label1.Text = "Nombre";
+			// 
+			// label2
+			// 
+			this.label2.Location = new System.Drawing.Point(436, 43);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(100, 23);
+			this.label2.TabIndex = 11;
+			this.label2.Text = "Destino";
+			// 
+			// txbNombre
+			// 
+			this.txbNombre.Location = new System.Drawing.Point(491, 12);
+			this.txbNombre.Name = "txbNombre";
+			this.txbNombre.Size = new System.Drawing.Size(100, 20);
+			this.txbNombre.TabIndex = 12;
+			// 
+			// txbDestino
+			// 
+			this.txbDestino.Location = new System.Drawing.Point(491, 39);
+			this.txbDestino.Name = "txbDestino";
+			this.txbDestino.Size = new System.Drawing.Size(100, 20);
+			this.txbDestino.TabIndex = 13;
+			// 
+			// btnCopiarDirectorio
+			// 
+			this.btnCopiarDirectorio.Location = new System.Drawing.Point(597, 25);
+			this.btnCopiarDirectorio.Name = "btnCopiarDirectorio";
+			this.btnCopiarDirectorio.Size = new System.Drawing.Size(102, 23);
+			this.btnCopiarDirectorio.TabIndex = 14;
+			this.btnCopiarDirectorio.Text = "Copiar Directorio";
+			this.btnCopiarDirectorio.UseVisualStyleBackColor = true;
+			this.btnCopiarDirectorio.Click += new System.EventHandler(this.BtnCopiarDirectorioClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.RoyalBlue;
-			this.ClientSize = new System.Drawing.Size(546, 246);
+			this.ClientSize = new System.Drawing.Size(793, 283);
+			this.Controls.Add(this.btnCopiarDirectorio);
+			this.Controls.Add(this.txbDestino);
+			this.Controls.Add(this.txbNombre);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnCrearDirectorio);
 			this.Controls.Add(this.txbCrearDirectorio);
 			this.Controls.Add(this.btnCrearArchivo);

@@ -154,6 +154,13 @@ namespace IntroducciónArchivos
 				
 				escritura.Close();
 				
+				using(StreamWriter escritura2 = File.CreateText(@path))
+				{
+					escritura2.WriteLine("Hola archivo");
+					escritura2.WriteLine("Segunda linea");
+					escritura2.WriteLine("Tercera linea");
+				}
+				
 				EscribirLog("info", "Escritura Archivo: Se escribió el archivo", dgvLogs);
 			}
 			catch(Exception error)
@@ -173,6 +180,77 @@ namespace IntroducciónArchivos
 			{
 				EscribirLog("error", error.ToString(), dgvLogs);
 			}
+		}
+		void BtnCopiarDirectorioClick(object sender, EventArgs e)
+		{
+			try
+			{
+				string path = txbNombre.Text;
+				string pathDestino = txbDestino.Text;
+				char[] cadenaInicio = path.ToCharArray();
+				char[] cadenaDestino = path.ToCharArray();
+				
+				//Leer Directorios
+				
+				Directory.Exists(@path);
+				
+				bool existeDirectorioInicio = Directory.Exists(@path);
+				
+				if(existeDirectorioInicio == true)
+				{
+					string[] directoriosInicio = Directory.GetDirectories(@path);
+					
+					foreach (string directorio in directoriosInicio) 
+					{
+						//EscribirLog("info", directorio, dgvLogs);
+						for(int i = cadenaDestino.Length; i < (cadenaInicio.Length + 1); i++)
+						{
+							char cadenaPath = cadenaDestino[i];
+						}
+						// int inicioSubstring = path.Length;
+						//int finSubstring = directorio.Length;
+						//string nombreDirectorio = directorio.Substring(inicioSubestring, finSubstring);
+						EscribirLog("info", cadenaPath, dgvLogs);
+					}
+				}
+				else
+				{
+					EscribirLog("error", "No existe directorio.", dgvLogs);
+				}
+				
+				//Crear cada Directorio 
+				/*Directory.CreateDirectory(@path);	
+				EscribirLog("info", "Crear Directorio: Se creó el directorio " + path, dgvLogs);
+		
+				//Leer Archivos
+				FileInfo[] archivosDeDirectorio = leerDirectorio.GetFiles();
+					
+				foreach (FileInfo archivo in archivosDeDirectorio) 
+				{
+					EscribirLog("info", "Archivo: " + archivo.CreationTime, dgvLogs);
+					EscribirLog("info", "Archivo: " + archivo.FullName, dgvLogs);
+					EscribirLog("info", "Archivo: " + archivo.Extension, dgvLogs);
+					EscribirLog("info", "Archivo: " + archivo.IsReadOnly, dgvLogs);
+				}
+				
+				//Copiar cada Archivo
+				
+				
+				
+				//FileInfo[] archivosDirectorio = leerDirectorio.GetFiles();
+					
+				foreach (FileInfo archivo in archivosDirectorio) 
+				{
+				System.IO.File.Copy(path, pathDestino);
+				
+				//StreamWriter copia_archivo = File.Copy(path, pathDestino);
+				}*/
+			}
+			catch(Exception error)
+			{
+				EscribirLog("error", error.ToString(), dgvLogs);
+			}
+			
 		}
 		
 	}
