@@ -6,3 +6,11 @@ C:\Temp\Ejemplos_C_Cpp\Segundo Bimestre\IntroducciónArchivos\IntroducciónArchi
 C:\Temp\Ejemplos_C_Cpp\Segundo Bimestre\IntroducciónArchivos\IntroducciónArchivos\obj\Debug\IntroducciónArchivos.pdb
 C:\Temp\Ejemplos_C_Cpp\Segundo Bimestre\IntroducciónArchivos\IntroducciónArchivos\obj\Debug\IntroducciónArchivos.MainForm.resources
 C:\Temp\Ejemplos_C_Cpp\Segundo Bimestre\IntroducciónArchivos\IntroducciónArchivos\obj\Debug\IntroducciónArchivos.csproj.GenerateResource.Cache
+C:\Users\USRGAM\Documents\GitHub\Ejemplos_C_Cpp\Segundo Bimestre\IntroducciónArchivos\IntroducciónArchivos\obj\Debug\IntroducciónArchivos.csprojResolveAssemblyReference.cache
+C:\Users\USRGAM\Documents\GitHub\Ejemplos_C_Cpp\Segundo Bimestre\IntroducciónArchivos\IntroducciónArchivos\obj\Debug\IntroducciónArchivos.MainForm.resources
+C:\Users\USRGAM\Documents\GitHub\Ejemplos_C_Cpp\Segundo Bimestre\IntroducciónArchivos\IntroducciónArchivos\obj\Debug\IntroducciónArchivos.csproj.GenerateResource.Cache
+C:\Users\USRGAM\Documents\GitHub\Ejemplos_C_Cpp\Segundo Bimestre\IntroducciónArchivos\IntroducciónArchivos\bin\Debug\IntroducciónArchivos.exe.config
+C:\Users\USRGAM\Documents\GitHub\Ejemplos_C_Cpp\Segundo Bimestre\IntroducciónArchivos\IntroducciónArchivos\bin\Debug\IntroducciónArchivos.exe
+C:\Users\USRGAM\Documents\GitHub\Ejemplos_C_Cpp\Segundo Bimestre\IntroducciónArchivos\IntroducciónArchivos\bin\Debug\IntroducciónArchivos.pdb
+C:\Users\USRGAM\Documents\GitHub\Ejemplos_C_Cpp\Segundo Bimestre\IntroducciónArchivos\IntroducciónArchivos\obj\Debug\IntroducciónArchivos.exe
+C:\Users\USRGAM\Documents\GitHub\Ejemplos_C_Cpp\Segundo Bimestre\IntroducciónArchivos\IntroducciónArchivos\obj\Debug\IntroducciónArchivos.pdb

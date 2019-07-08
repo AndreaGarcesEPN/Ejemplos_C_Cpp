@@ -203,14 +203,14 @@ namespace IntroducciónArchivos
 					foreach (string directorio in directoriosInicio) 
 					{
 						//EscribirLog("info", directorio, dgvLogs);
-						for(int i = cadenaDestino.Length; i < (cadenaInicio.Length + 1); i++)
+						/*for(int i = cadenaDestino.Length; i < (cadenaInicio.Length + 1); i++)
 						{
 							char cadenaPath = cadenaDestino[i];
-						}
+						}*/
 						// int inicioSubstring = path.Length;
 						//int finSubstring = directorio.Length;
 						//string nombreDirectorio = directorio.Substring(inicioSubestring, finSubstring);
-						EscribirLog("info", cadenaPath, dgvLogs);
+						//EscribirLog("info", cadenaPath, dgvLogs);
 					}
 				}
 				else
