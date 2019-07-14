@@ -86,7 +86,7 @@ namespace IntroducciónArchivos
 			this.dgvLogs.GridColor = System.Drawing.SystemColors.AppWorkspace;
 			this.dgvLogs.Location = new System.Drawing.Point(12, 67);
 			this.dgvLogs.Name = "dgvLogs";
-			this.dgvLogs.Size = new System.Drawing.Size(769, 204);
+			this.dgvLogs.Size = new System.Drawing.Size(769, 206);
 			this.dgvLogs.TabIndex = 0;
 			this.dgvLogs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLogsCellDoubleClick);
 			// 
@@ -226,7 +226,7 @@ namespace IntroducciónArchivos
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.RoyalBlue;
-			this.ClientSize = new System.Drawing.Size(793, 283);
+			this.ClientSize = new System.Drawing.Size(793, 285);
 			this.Controls.Add(this.btnCopiarDirectorio);
 			this.Controls.Add(this.txbDestino);
 			this.Controls.Add(this.txbNombre);

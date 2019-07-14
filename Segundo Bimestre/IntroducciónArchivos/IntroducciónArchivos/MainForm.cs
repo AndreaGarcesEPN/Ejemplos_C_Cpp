@@ -185,7 +185,32 @@ namespace IntroducciónArchivos
 		{
 			try
 			{
+				//Leer Directorios
+				
 				string path = txbNombre.Text;
+				string[] directorios = Directory.GetDirectories(@path);
+				
+				Directory.Exists(@path);
+				
+				if(Directory.Exists(@path))
+				{
+					//string[] directorios = Directory.GetDirectories(@path);
+					foreach (string directorio in directorios) 
+					{
+						EscribirLog("Subdirectorio", "Directorio: " + directorio, dgvLogs);
+					}
+				}
+				else
+				{
+					EscribirLog("Error", "No se encontro el directorio", dgvLogs);
+				}
+				
+				//Crear cada directorio
+					
+				DirectoryInfo di = Directory.CreateDirectory(@path);
+				EscribirLog("Info", "Directorios creados exitosamente", dgvLogs);
+				
+				/*string path = txbNombre.Text;
 				string pathDestino = txbDestino.Text;
 				char[] cadenaInicio = path.ToCharArray();
 				char[] cadenaDestino = path.ToCharArray();
@@ -202,15 +227,15 @@ namespace IntroducciónArchivos
 					
 					foreach (string directorio in directoriosInicio) 
 					{
-						//EscribirLog("info", directorio, dgvLogs);
-						/*for(int i = cadenaDestino.Length; i < (cadenaInicio.Length + 1); i++)
+						EscribirLog("info", directorio, dgvLogs);
+						for(int i = cadenaDestino.Length; i < (cadenaInicio.Length + 1); i++)
 						{
 							char cadenaPath = cadenaDestino[i];
-						}*/
-						// int inicioSubstring = path.Length;
-						//int finSubstring = directorio.Length;
-						//string nombreDirectorio = directorio.Substring(inicioSubestring, finSubstring);
-						//EscribirLog("info", cadenaPath, dgvLogs);
+						}
+						int inicioSubstring = path.Length;
+						int finSubstring = directorio.Length;
+						string nombreDirectorio = directorio.Substring(inicioSubestring, finSubstring);
+						EscribirLog("info", cadenaPath, dgvLogs);
 					}
 				}
 				else
@@ -219,7 +244,7 @@ namespace IntroducciónArchivos
 				}
 				
 				//Crear cada Directorio 
-				/*Directory.CreateDirectory(@path);	
+				Directory.CreateDirectory(@path);	
 				EscribirLog("info", "Crear Directorio: Se creó el directorio " + path, dgvLogs);
 		
 				//Leer Archivos
@@ -248,7 +273,7 @@ namespace IntroducciónArchivos
 			}
 			catch(Exception error)
 			{
-				EscribirLog("error", error.ToString(), dgvLogs);
+				EscribirLog("Error", error.ToString(), dgvLogs);
 			}
 			
 		}
