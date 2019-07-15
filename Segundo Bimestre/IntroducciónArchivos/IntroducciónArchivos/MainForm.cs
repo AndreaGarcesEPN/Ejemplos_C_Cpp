@@ -229,11 +229,12 @@ namespace IntroducciónArchivos
 				EscribirLog("error", error.ToString(), dgvLogs);
 			}
 		}
-		/*void BtnCopiarDirectorioClick(object sender, EventArgs e)
+		void BtnCopiarDirectorioClick(object sender, EventArgs e)
 		{
 			try
 			{
-				string path = txbNombre.Text;
+				
+				/*string path = txbNombre.Text;
 				string pathDestino = txbDestino.Text;
 				char[] cadenaInicio = path.ToCharArray();
 				char[] cadenaDestino = path.ToCharArray();
@@ -289,14 +290,14 @@ namespace IntroducciónArchivos
 				else
 				{
 					EscribirLog("error", "No existe directorio.", dgvLogs);
-				}
+				}*/
 			}
 			catch(Exception error)
 			{
 				EscribirLog("error", error.ToString(), dgvLogs);
 			}
 			
-		}*/
+		}
 		
 	}
 }
