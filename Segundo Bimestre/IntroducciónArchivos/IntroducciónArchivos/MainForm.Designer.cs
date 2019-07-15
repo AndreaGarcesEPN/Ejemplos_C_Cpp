@@ -34,6 +34,8 @@ namespace IntroducciónArchivos
 		private System.Windows.Forms.Button btnStreamW;
 		private System.Windows.Forms.TextBox txbStreamW;
 		private System.Windows.Forms.Button btnStreamR;
+		private System.Windows.Forms.TextBox txbArreglo;
+		private System.Windows.Forms.Button btnOrdenarArregloBS;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -76,6 +78,8 @@ namespace IntroducciónArchivos
 			this.btnStreamW = new System.Windows.Forms.Button();
 			this.txbStreamW = new System.Windows.Forms.TextBox();
 			this.btnStreamR = new System.Windows.Forms.Button();
+			this.txbArreglo = new System.Windows.Forms.TextBox();
+			this.btnOrdenarArregloBS = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -252,12 +256,31 @@ namespace IntroducciónArchivos
 			this.btnStreamR.UseVisualStyleBackColor = true;
 			this.btnStreamR.Click += new System.EventHandler(this.BtnStreamRClick);
 			// 
+			// txbArreglo
+			// 
+			this.txbArreglo.Location = new System.Drawing.Point(251, 233);
+			this.txbArreglo.Name = "txbArreglo";
+			this.txbArreglo.Size = new System.Drawing.Size(378, 20);
+			this.txbArreglo.TabIndex = 18;
+			// 
+			// btnOrdenarArregloBS
+			// 
+			this.btnOrdenarArregloBS.Location = new System.Drawing.Point(251, 259);
+			this.btnOrdenarArregloBS.Name = "btnOrdenarArregloBS";
+			this.btnOrdenarArregloBS.Size = new System.Drawing.Size(114, 23);
+			this.btnOrdenarArregloBS.TabIndex = 19;
+			this.btnOrdenarArregloBS.Text = "Ordenar Arreglo BS";
+			this.btnOrdenarArregloBS.UseVisualStyleBackColor = true;
+			this.btnOrdenarArregloBS.Click += new System.EventHandler(this.BtnOrdenarArregloBSClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.RoyalBlue;
 			this.ClientSize = new System.Drawing.Size(793, 296);
+			this.Controls.Add(this.btnOrdenarArregloBS);
+			this.Controls.Add(this.txbArreglo);
 			this.Controls.Add(this.btnStreamR);
 			this.Controls.Add(this.txbStreamW);
 			this.Controls.Add(this.btnStreamW);

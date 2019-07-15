@@ -298,6 +298,34 @@ namespace IntroducciónArchivos
 			}
 			
 		}
+		void BtnOrdenarArregloBSClick(object sender, EventArgs e)
+		{
+			//Proyecto Persoanjes históricos
+			string arregloTexto = txbArreglo.Text;
+			string[] elementosString = arregloTexto.Split(',');
+			int[] elementos = new int[elementosString.Length];
+			int contador = 0;
+			foreach (string elementoString in elementosString) 
+			{
+				elementos[contador] = Int32.Parse(elementoString);
+				EscribirLog("info", elementos[contador].ToString(),dgvLogs);
+				contador++;
+			}
+			for (int iPrimerelemento = 0; iPrimerelemento < elementosString.Length; iPrimerelemento++) 
+			{
+				for (int iSegundoelemento = 0; iSegundoelemento < elementosString.Length; iSegundoelemento++) 
+				{
+					int primerNumero = elementos[iPrimerelemento];
+					int segundoNumero = elementos[iSegundoelemento];
+					if (primerNumero < segundoNumero) 
+					{
+						int valorTemporal = segundoNumero;
+						elementos[iPrimerelemento] = elementos[iSegundoelemento];
+						elementos[iSegundoelemento] = valorTemporal;
+					}	
+				}
+			}
+		}
 		
 	}
 }
