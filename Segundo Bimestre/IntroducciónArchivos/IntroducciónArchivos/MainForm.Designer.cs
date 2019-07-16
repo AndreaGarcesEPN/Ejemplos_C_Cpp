@@ -228,6 +228,7 @@ namespace IntroducciónArchivos
 			this.btnCopiarDirectorio.TabIndex = 14;
 			this.btnCopiarDirectorio.Text = "Copiar Directorio";
 			this.btnCopiarDirectorio.UseVisualStyleBackColor = true;
+			this.btnCopiarDirectorio.Click += new System.EventHandler(this.BtnCopiarDirectorioClick);
 			// 
 			// btnStreamW
 			// 

@@ -233,64 +233,54 @@ namespace IntroducciónArchivos
 		{
 			try
 			{
-				
-				/*string path = txbNombre.Text;
-				string pathDestino = txbDestino.Text;
-				char[] cadenaInicio = path.ToCharArray();
-				char[] cadenaDestino = path.ToCharArray();
-				
 				//Leer Directorios
 				
-				Directory.Exists(@path);
+				string path = txbNombre.Text;
+				DirectoryInfo directory = new DirectoryInfo(@path);
+				string[] directorios = Directory.GetDirectories(@path);
+				FileInfo[] archivos = directory.GetFiles();
+				int numDirectorios = directorios.Length;
 				
-				bool existeDirectorioInicio = Directory.Exists(@path);
-				
-				if(existeDirectorioInicio == true)
+				if (Directory.Exists(@path)) 
 				{
-					string[] directoriosInicio = Directory.GetDirectories(@path);
-					
-					foreach (string directorio in directoriosInicio) 
+					foreach (string directorio in directorios) 
 					{
-						//EscribirLog("info", directorio, dgvLogs);
-						for(int i = cadenaDestino.Length; i < (cadenaInicio.Length + 1); i++)
-						{
-							char cadenaPath = cadenaDestino[i];
-						}
-						//int inicioSubstring = path.Length;
-						//int finSubstring = directorio.Length;
-						//string nombreDirectorio = directorio.Substring(inicioSubestring, finSubstring);
-						EscribirLog("info", cadenaPath, dgvLogs);
-					}
-						//Crear cada Directorio 
-					Directory.CreateDirectory(@path);	
-					EscribirLog("info", "Crear Directorio: Se creó el directorio " + path, dgvLogs);
-			
-					//Leer Archivos
-					DirectoryInfo infoDirectorio = new DirectoryInfo(@path);
-					FileInfo[] archivosDeDirectorio = Directory.GetFiles(@path);
-						
-					foreach (FileInfo archivo in archivosDeDirectorio) 
-					{
-						EscribirLog("info", "Archivo: " + archivo.CreationTime, dgvLogs);
-						EscribirLog("info", "Archivo: " + archivo.FullName, dgvLogs);
-						EscribirLog("info", "Archivo: " + archivo.Extension, dgvLogs);
-						EscribirLog("info", "Archivo: " + archivo.IsReadOnly, dgvLogs);
-					}
-					
-					//Copiar cada Archivo
-					DirectoryInfo infoDirectorio = new DirectoryInfo(@path);
-					FileInfo[] archivosDirectorio = Directory.GetFiles(@path);
-						
-					foreach (FileInfo archivo in archivosDirectorio) 
-					{
-						System.IO.File.Copy(path, pathDestino);
-						//StreamWriter copia_archivo = File.Copy(path, pathDestino);
+						EscribirLog("Subdirectorio", "Directorio: " + directorio, dgvLogs);
 					}
 				}
 				else
 				{
-					EscribirLog("error", "No existe directorio.", dgvLogs);
-				}*/
+					EscribirLog("error", "No se encontro el directorio", dgvLogs);
+				}
+				
+				//Crear cada directorio
+				
+				string pathfinal = txbDestino.Text;
+				Directory.CreateDirectory(@pathfinal);
+				EscribirLog("info", "Directorio creado exitosamente", dgvLogs);
+				
+				//Leer archivos
+				
+				foreach (FileInfo archivo in archivos) 
+				{
+					EscribirLog("Archivos", "Archivo: " + archivo, dgvLogs);
+				}
+				
+				//Copiar cada archivo
+				
+				foreach (FileInfo archivo in archivos) 
+				{
+					string patharchivo = Path.Combine(@pathfinal, archivo.Name);
+					archivo.CopyTo(patharchivo, false);
+				}
+				EscribirLog("info", "Archivos copiados exitosamente", dgvLogs);
+				
+				//Recursividad
+				
+				foreach (string directorio in directorios) 
+				{
+					BtnCopiarDirectorioClick(object directorio, EventArgs e)
+				}
 			}
 			catch(Exception error)
 			{
