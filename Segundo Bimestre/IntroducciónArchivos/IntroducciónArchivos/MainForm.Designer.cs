@@ -36,6 +36,7 @@ namespace IntroducciónArchivos
 		private System.Windows.Forms.Button btnStreamR;
 		private System.Windows.Forms.TextBox txbArreglo;
 		private System.Windows.Forms.Button btnOrdenarArregloBS;
+		private System.Windows.Forms.Button btnOrdenarArregloSs;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -80,6 +81,7 @@ namespace IntroducciónArchivos
 			this.btnStreamR = new System.Windows.Forms.Button();
 			this.txbArreglo = new System.Windows.Forms.TextBox();
 			this.btnOrdenarArregloBS = new System.Windows.Forms.Button();
+			this.btnOrdenarArregloSs = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -270,9 +272,18 @@ namespace IntroducciónArchivos
 			this.btnOrdenarArregloBS.Name = "btnOrdenarArregloBS";
 			this.btnOrdenarArregloBS.Size = new System.Drawing.Size(114, 23);
 			this.btnOrdenarArregloBS.TabIndex = 19;
-			this.btnOrdenarArregloBS.Text = "Ordenar Arreglo BS";
+			this.btnOrdenarArregloBS.Text = "Ordenar Arreglo Bs";
 			this.btnOrdenarArregloBS.UseVisualStyleBackColor = true;
 			this.btnOrdenarArregloBS.Click += new System.EventHandler(this.BtnOrdenarArregloBSClick);
+			// 
+			// btnOrdenarArregloSs
+			// 
+			this.btnOrdenarArregloSs.Location = new System.Drawing.Point(371, 259);
+			this.btnOrdenarArregloSs.Name = "btnOrdenarArregloSs";
+			this.btnOrdenarArregloSs.Size = new System.Drawing.Size(114, 23);
+			this.btnOrdenarArregloSs.TabIndex = 20;
+			this.btnOrdenarArregloSs.Text = "Ordenar Arreglo Ss";
+			this.btnOrdenarArregloSs.UseVisualStyleBackColor = true;
 			// 
 			// MainForm
 			// 
@@ -280,6 +291,7 @@ namespace IntroducciónArchivos
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.RoyalBlue;
 			this.ClientSize = new System.Drawing.Size(793, 296);
+			this.Controls.Add(this.btnOrdenarArregloSs);
 			this.Controls.Add(this.btnOrdenarArregloBS);
 			this.Controls.Add(this.txbArreglo);
 			this.Controls.Add(this.btnStreamR);

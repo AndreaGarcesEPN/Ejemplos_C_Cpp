@@ -277,10 +277,10 @@ namespace IntroducciónArchivos
 				
 				//Recursividad
 				
-				foreach (string directorio in directorios) 
+				/*foreach (string directorio in directorios) 
 				{
 					BtnCopiarDirectorioClick(object directorio, EventArgs e)
-				}
+				}*/
 			}
 			catch(Exception error)
 			{
@@ -290,10 +290,11 @@ namespace IntroducciónArchivos
 		}
 		void BtnOrdenarArregloBSClick(object sender, EventArgs e)
 		{
-			//Proyecto Persoanjes históricos
+			
 			string arregloTexto = txbArreglo.Text;
 			string[] elementosString = arregloTexto.Split(',');
-			int[] elementos = new int[elementosString.Length];
+			int longitudArreglo = elementosString.Length - 1;
+			int[] elementos = new int[longitudArreglo + 1];
 			int contador = 0;
 			foreach (string elementoString in elementosString) 
 			{
@@ -301,21 +302,25 @@ namespace IntroducciónArchivos
 				EscribirLog("info", elementos[contador].ToString(),dgvLogs);
 				contador++;
 			}
-			for (int iPrimerelemento = 0; iPrimerelemento < elementosString.Length; iPrimerelemento++) 
+			for (int iPrimerelemento = 0; iPrimerelemento < longitudArreglo; iPrimerelemento++) // Primer for 
 			{
-				for (int iSegundoelemento = 0; iSegundoelemento < elementosString.Length; iSegundoelemento++) 
+				for (int iSegundoelemento = 0; iSegundoelemento < (longitudArreglo - iPrimerelemento); iSegundoelemento++) //Segundo for
 				{
-					int primerNumero = elementos[iPrimerelemento];
-					int segundoNumero = elementos[iSegundoelemento];
-					if (primerNumero < segundoNumero) 
+					int primerNumero = elementos[iSegundoelemento];
+					int segundoNumero = elementos[iSegundoelemento + 1];
+					if (segundoNumero < primerNumero) // Comparación
 					{
-						int valorTemporal = segundoNumero;
-						elementos[iPrimerelemento] = elementos[iSegundoelemento];
-						elementos[iSegundoelemento] = valorTemporal;
-					}	
-				}
+						int valorTemporal = primerNumero;
+						elementos[iSegundoelemento] = elementos[iSegundoelemento + 1];
+						elementos[iSegundoelemento + 1] = valorTemporal;
+					}
+				} // Fin segundo for
+			} // Fin primer for
+			foreach (int elemento in elementos) 
+			{
+				EscribirLog("orden", elemento.ToString(), dgvLogs);
 			}
 		}
 		
 	}
-}
+}//Proyecto Persoanjes históricos
