@@ -290,7 +290,6 @@ namespace IntroducciónArchivos
 		}
 		void BtnOrdenarArregloBSClick(object sender, EventArgs e)
 		{
-			
 			string arregloTexto = txbArreglo.Text;
 			string[] elementosString = arregloTexto.Split(',');
 			int longitudArreglo = elementosString.Length - 1;
@@ -316,11 +315,90 @@ namespace IntroducciónArchivos
 					}
 				} // Fin segundo for
 			} // Fin primer for
-			foreach (int elemento in elementos) 
+			foreach (int elemento in elementos)
 			{
 				EscribirLog("orden", elemento.ToString(), dgvLogs);
 			}
+			string arregloOrdenado = string.Join("",elementos);
+		}
+		void BtnBusquedaClick(object sender, EventArgs e)
+		{
+			string arregloTexto = txbArreglo.Text;
+			string[] elementosString = arregloTexto.Split(',');
+			int longitudArreglo = elementosString.Length - 1;
+			int[] elementos = new int[longitudArreglo + 1];
+			int contador = 0;
+			foreach (string elementoString in elementosString) 
+			{
+				elementos[contador] = Int32.Parse(elementoString);
+				EscribirLog("info", elementos[contador].ToString(),dgvLogs);
+				contador++;
+			}
+			for (int iPrimerelemento = 0; iPrimerelemento < longitudArreglo; iPrimerelemento++) // Primer for 
+			{
+				for (int iSegundoelemento = 0; iSegundoelemento < (longitudArreglo - iPrimerelemento); iSegundoelemento++) //Segundo for
+				{
+					int primerNumero = elementos[iSegundoelemento];
+					int segundoNumero = elementos[iSegundoelemento + 1];
+					if (segundoNumero < primerNumero) // Comparación
+					{
+						int valorTemporal = primerNumero;
+						elementos[iSegundoelemento] = elementos[iSegundoelemento + 1];
+						elementos[iSegundoelemento + 1] = valorTemporal;
+					}
+				} // Fin segundo for
+			} // Fin primer for
+			foreach (int elemento in elementos)
+			{
+				EscribirLog("orden", elemento.ToString(), dgvLogs);
+			}
+			//int[] arregloOrdenado = Array.ConvertAll(elementos, int.Parse);
+			//string arregloOrdenado = string.Join("",elementos);
+			//------------------------------------------------------------
+			/*string elementoBuscado = txbBusqueda.Text;
+			int mitad;
+			int primerElemento = 0;
+			int ultimoElemento = longitudArreglo;
+			if(elementos[primerElemento] >= 1)
+			{
+				mitad = 1 + (ultimoElemento - 1) / 2;
+			}
+			if(elementos[mitad] == elementoBuscado)
+			{
+				return mitad;
+			}*/
+			string elementoBuscado = txbBusqueda.Text;
+			Busqueda(elementos[elementosString.Length - 1], elementos[0], elementoBuscado, elementos);
+		}
+		int Busqueda(int ultimoElemento, int primerElemento, string elementoBuscado, int[] elementos)
+		{
+			primerElemento = 0;
+			int mitad = 0;
+			int elementoBuscadoEntero = int.Parse(elementoBuscado);
+			/*int primerEntero = int.Parse(elementos[primerElemento]);
+			int ultimoEntero = int.Parse(elementos[ultimoElemento]);
+			 int mitadEntero = int.Parse(elementos[mitad]);*/
+			if(elementos[ultimoElemento] >= 1)
+			{
+				mitad = 1 + (ultimoElemento) / 2;
+							
+				if(mitad == elementoBuscadoEntero)
+				{
+					return mitad;
+				}
+				if(mitad < elementoBuscadoEntero)
+				{
+					return Busqueda(ultimoElemento, mitad + 1, elementoBuscado, elementos);
+				}
+				if(mitad > elementoBuscadoEntero)
+				{
+					return Busqueda(mitad - 1, primerElemento, elementoBuscado, elementos);
+				}
+			}
+
+			return -1;
 		}
 		
+		
 	}
-}//Proyecto Persoanjes históricos
+}

@@ -37,6 +37,8 @@ namespace IntroducciónArchivos
 		private System.Windows.Forms.TextBox txbArreglo;
 		private System.Windows.Forms.Button btnOrdenarArregloBS;
 		private System.Windows.Forms.Button btnOrdenarArregloSs;
+		private System.Windows.Forms.TextBox txbBusqueda;
+		private System.Windows.Forms.Button btnBusqueda;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -82,6 +84,8 @@ namespace IntroducciónArchivos
 			this.txbArreglo = new System.Windows.Forms.TextBox();
 			this.btnOrdenarArregloBS = new System.Windows.Forms.Button();
 			this.btnOrdenarArregloSs = new System.Windows.Forms.Button();
+			this.txbBusqueda = new System.Windows.Forms.TextBox();
+			this.btnBusqueda = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -263,7 +267,7 @@ namespace IntroducciónArchivos
 			// 
 			this.txbArreglo.Location = new System.Drawing.Point(251, 233);
 			this.txbArreglo.Name = "txbArreglo";
-			this.txbArreglo.Size = new System.Drawing.Size(378, 20);
+			this.txbArreglo.Size = new System.Drawing.Size(234, 20);
 			this.txbArreglo.TabIndex = 18;
 			// 
 			// btnOrdenarArregloBS
@@ -285,12 +289,31 @@ namespace IntroducciónArchivos
 			this.btnOrdenarArregloSs.Text = "Ordenar Arreglo Ss";
 			this.btnOrdenarArregloSs.UseVisualStyleBackColor = true;
 			// 
+			// txbBusqueda
+			// 
+			this.txbBusqueda.Location = new System.Drawing.Point(501, 233);
+			this.txbBusqueda.Name = "txbBusqueda";
+			this.txbBusqueda.Size = new System.Drawing.Size(75, 20);
+			this.txbBusqueda.TabIndex = 21;
+			// 
+			// btnBusqueda
+			// 
+			this.btnBusqueda.Location = new System.Drawing.Point(501, 259);
+			this.btnBusqueda.Name = "btnBusqueda";
+			this.btnBusqueda.Size = new System.Drawing.Size(75, 23);
+			this.btnBusqueda.TabIndex = 22;
+			this.btnBusqueda.Text = "Búsqueda B";
+			this.btnBusqueda.UseVisualStyleBackColor = true;
+			this.btnBusqueda.Click += new System.EventHandler(this.BtnBusquedaClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.RoyalBlue;
 			this.ClientSize = new System.Drawing.Size(793, 296);
+			this.Controls.Add(this.btnBusqueda);
+			this.Controls.Add(this.txbBusqueda);
 			this.Controls.Add(this.btnOrdenarArregloSs);
 			this.Controls.Add(this.btnOrdenarArregloBS);
 			this.Controls.Add(this.txbArreglo);
