@@ -352,47 +352,28 @@ namespace IntroducciónArchivos
 			{
 				EscribirLog("orden", elemento.ToString(), dgvLogs);
 			}
-			//int[] arregloOrdenado = Array.ConvertAll(elementos, int.Parse);
-			//string arregloOrdenado = string.Join("",elementos);
-			//------------------------------------------------------------
-			/*string elementoBuscado = txbBusqueda.Text;
-			int mitad;
-			int primerElemento = 0;
-			int ultimoElemento = longitudArreglo;
-			if(elementos[primerElemento] >= 1)
-			{
-				mitad = 1 + (ultimoElemento - 1) / 2;
-			}
-			if(elementos[mitad] == elementoBuscado)
-			{
-				return mitad;
-			}*/
-			string elementoBuscado = txbBusqueda.Text;
-			Busqueda(elementos[elementosString.Length - 1], elementos[0], elementoBuscado, elementos);
+			int elementoBuscado = Int32.Parse(txbBusqueda.Text);
+			int posicionElemento = Busqueda(elementos, 0, (elementosString.Length - 1), elementoBuscado);
+			EscribirLog("posicion del elemento buscado", posicionElemento.ToString(), dgvLogs);
 		}
-		int Busqueda(int ultimoElemento, int primerElemento, string elementoBuscado, int[] elementos)
+		int Busqueda(int[] elementos, int primerElemento, int ultimoElemento, int elementoBuscado)
 		{
-			primerElemento = 0;
 			int mitad = 0;
-			int elementoBuscadoEntero = int.Parse(elementoBuscado);
-			/*int primerEntero = int.Parse(elementos[primerElemento]);
-			int ultimoEntero = int.Parse(elementos[ultimoElemento]);
-			 int mitadEntero = int.Parse(elementos[mitad]);*/
 			if(elementos[ultimoElemento] >= 1)
 			{
-				mitad = 1 + (ultimoElemento) / 2;
-							
-				if(mitad == elementoBuscadoEntero)
+				mitad = primerElemento + (ultimoElemento - primerElemento) / 2;
+
+				if(elementos[mitad] == elementoBuscado)
 				{
 					return mitad;
 				}
-				if(mitad < elementoBuscadoEntero)
+				if(elementos[mitad] > elementoBuscado)
 				{
-					return Busqueda(ultimoElemento, mitad + 1, elementoBuscado, elementos);
+					return Busqueda(elementos, primerElemento, (mitad - 1), elementoBuscado);
 				}
-				if(mitad > elementoBuscadoEntero)
+				else
 				{
-					return Busqueda(mitad - 1, primerElemento, elementoBuscado, elementos);
+					return Busqueda(elementos, (mitad + 1), ultimoElemento, elementoBuscado);
 				}
 			}
 
